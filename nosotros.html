@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sobre Nosotros - AnimeApps</title>
+  <link rel="stylesheet" href="css/nosotros.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">AnimeApps</div>
+      <button class="hamburger" id="menu-toggle">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="estadisticas.html">Estadísticas</a></li>
+        <li><a href="nosotros.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html">Contáctenos</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Conoce a los Creadores</h1>
+      <p>Detrás de AnimeApps</p>
+    </div>
+  </header>
+
+  <main class="about-container">
+    <section class="team-section">
+      <h2>Nuestro Equipo</h2>
+      <div class="person">
+        <img src="imagenes/joseph.jpg" alt="Persona 1">
+        <div class="description">
+          <h3>JOSEPH YOTAGRI RUIZ</h3>
+          <p>Desarrollador Front-End apasionado por la animación y las interfaces limpias. Encargado de diseño y experiencia de usuario.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="imagenes/luis.jpeg" alt="Persona 2">
+        <div class="description">
+          <h3>LUIS ANGEL HERRERA VARGAS</h3>
+          <p>Especialista en back-end y bases de datos. Responsable de la lógica y funcionalidad detrás de cada sección.</p>
+        </div>
+      </div>
+      <div class="person">
+        <img src="imagenes/yakelin.jpg" alt="Persona 3">
+        <div class="description">
+          <h3>YAKELIN DAIHANA GRANADA AGUIRRE</h3>
+          <p>Diseñadora gráfica y editora de contenido. Se encarga del aspecto visual, redacción y coherencia estética.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mv-section">
+      <div class="mv-box">
+        <h2>Misión</h2>
+        <p>Informar y educar a los fans del anime sobre las mejores apps disponibles, facilitando el acceso a contenido legal y de calidad.</p>
+      </div>
+      <div class="mv-box">
+        <h2>Visión</h2>
+        <p>Convertirse en la plataforma de referencia para descubrir, comparar y votar por apps de anime, promoviendo una comunidad global apasionada.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 AnimeApps. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+  </script>
+</body>
+</html>

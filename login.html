@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>AnimeApps | Acceso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="ring">
+    <i style="--clr:#00ff0a;"></i>
+    <i style="--clr:#ff0057;"></i>
+    <i style="--clr:#fffd44;"></i>
+
+    <!-- FORMULARIO INICIAR SESIÓN -->
+    <div class="form-container" id="loginForm">
+      <h2>Iniciar Sesión</h2>
+      <div class="inputBx">
+        <input type="text" placeholder="Usuario">
+      </div>
+      <div class="inputBx">
+        <input type="password" placeholder="Contraseña">
+      </div>
+      <div class="inputBx">
+        <a href="inicio.html"><input type="submit" value="Entrar"></a>
+      </div>
+      <div class="links">
+        <button onclick="mostrarRegistro()">Registrarse</button>
+      </div>
+    </div>
+
+    <!-- FORMULARIO REGISTRO -->
+    <div class="form-container hidden" id="signupForm">
+      <h2>Registrarse</h2>
+      <div class="inputBx">
+        <input type="text" placeholder="Usuario">
+      </div>
+      <div class="inputBx">
+        <input type="email" placeholder="Correo electrónico">
+      </div>
+      <div class="inputBx">
+        <input type="password" placeholder="Contraseña">
+      </div>
+      <div class="inputBx">
+        <a href="inicio.html"><input type="submit" value="Registrarme"></a>
+      </div>
+      <div class="links">
+        <button onclick="mostrarLogin()">Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script >
+        function mostrarRegistro() {
+        document.getElementById('loginForm').classList.add('hidden');
+        document.getElementById('signupForm').classList.remove('hidden');
+        }
+
+        function mostrarLogin() {
+        document.getElementById('signupForm').classList.add('hidden');
+        document.getElementById('loginForm').classList.remove('hidden');
+        }
+
+        </script>
+</body>
+</html>
