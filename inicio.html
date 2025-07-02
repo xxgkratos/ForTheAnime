@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AnimeApps</title>
+  <link rel="stylesheet" href="css/inicio.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Fondo animado -->
+  <div id="particles-background"></div>
+
+  <div id="contenido">
+    <!-- Menú -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">AnimeApps</div>
+        <button class="hamburger" id="menu-toggle">&#9776;</button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="inicio.html">Inicio</a></li>
+          <li><a href="estadisticas.html">Estadísticas</a></li>
+          <li><a href="nosotros.html">Sobre nosotros</a></li>
+          <li><a href="contacto.html">Contáctenos</a></li>
+        </ul>
+      </nav>
+      <div class="hero" id="inicio">
+        <h1>Explora las mejores apps de Anime</h1>
+        <p>Conoce, compara y elige tu favorita</p>
+      </div>
+    </header>
+
+    <!-- Carrusel -->
+    <section class="carousel" id="carousel">
+      <button class="carousel-btn prev" id="prev">&#10094;</button>
+      <div class="carousel-track" id="carousel-track">
+        <img src="imagenes/carrucel2.jpg" alt="Anime 1" />
+        <img src="imagenes/carrucel1.jpg" alt="Anime 2" />
+        <img src="imagenes/carrucel3.jpg" alt="Anime 3" />
+        <img src="imagenes/carrucel4.jpg" alt="Anime 4" />
+        <img src="imagenes/carrucel5.png" alt="Anime 5" />
+      </div>
+      <button class="carousel-btn next" id="next">&#10095;</button>
+    </section>
+
+    <!-- Top 10 Animes -->
+    <section class="top10-animes-flotantes">
+      <h2 class="top10-title">🌟 Top 10 Animes Más Vistos 🌟</h2>
+      <div class="top10-float-grid">
+        <div class="anime-float-wrapper" data-title="One Piece" data-img="imagenes/tarjeta25.jpg" data-desc="Luffy y su tripulación buscan el tesoro legendario en un mar lleno de aventuras.">
+          <button class="anime-float">One Piece<br><span>15M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="Attack on Titan" data-img="imagenes/tarjeta61.avif" data-desc="La humanidad lucha contra titanes gigantes para sobrevivir tras enormes murallas.">
+          <button class="anime-float">Attack on Titan<br><span>14M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="Naruto Shippuden" data-img="imagenes/tarjeta7.jpg" data-desc="Naruto lucha por ser Hokage mientras enfrenta enemigos cada vez más poderosos.">
+          <button class="anime-float">Naruto Shippuden<br><span>13M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="Dragon Ball Z" data-img="imagenes/carrucel5.png" data-desc="Goku y sus amigos enfrentan poderosos enemigos en batallas épicas por el universo.">
+          <button class="anime-float">Dragon Ball Z<br><span>12M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="Demon Slayer" data-img="imagenes/tarjeta2.jpg" data-desc="Tanjiro lucha contra demonios para vengar a su familia y salvar a su hermana.">
+          <button class="anime-float">Demon Slayer<br><span>11.5M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="Jujutsu Kaisen" data-img="imagenes/carrucel4.jpg" data-desc="Itadori y sus compañeros enfrentan maldiciones oscuras con técnicas sobrenaturales.">
+          <button class="anime-float">Jujutsu Kaisen<br><span>10M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="My Hero Academia" data-img="imagenes/tarjeta3.jpg" data-desc="Midoriya sueña con ser héroe en un mundo donde casi todos tienen superpoderes.">
+          <button class="anime-float">My Hero Academia<br><span>9.8M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="Bleach" data-img="imagenes/tarjeta16.jpg" data-desc="Ichigo obtiene poderes de shinigami y protege a los vivos y las almas.">
+          <button class="anime-float">Bleach<br><span>9.2M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="Death Note" data-img="imagenes/tarjeta15.jpg" data-desc="Light encuentra un cuaderno que mata y empieza una guerra intelectual con L.">
+          <button class="anime-float">Death Note<br><span>9M vistas</span></button>
+        </div>
+        <div class="anime-float-wrapper" data-title="FMA: Brotherhood" data-img="imagenes/tarjeta91.jpg" data-desc="Dos hermanos alquimistas buscan la piedra filosofal para recuperar sus cuerpos.">
+          <button class="anime-float">FMA: Brotherhood<br><span>8.5M vistas</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps -->
+    <!-- Apps -->
+    <main class="apps-container" id="apps">
+      <section class="app-card">
+        <img src="imagenes/crunchyroll.png" alt="Crunchyroll" />
+        <div class="app-info">
+          <h2>Crunchyroll</h2>
+          <p>Anime legal en alta calidad.</p>
+          <a href="crunchyroll.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/animeflv.png" alt="AnimeFLV" />
+        <div class="app-info">
+          <h2>AnimeFLV</h2>
+          <p>Anime subtitulado gratuito.</p>
+          <a href="animeflv.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/funimation.jpg" alt="Funimation" />
+        <div class="app-info">
+          <h2>Funimation</h2>
+          <p>Gran catálogo con doblaje.</p>
+          <a href="funimation.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/hidive.png" alt="HIDIVE" />
+        <div class="app-info">
+          <h2>HIDIVE</h2>
+          <p>Anime exclusivo y clásico.</p>
+          <a href="hidive.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/animeid.jpg" alt="AnimeID" />
+        <div class="app-info">
+          <h2>AnimeID</h2>
+          <p>Contenido actualizado diario.</p>
+          <a href="animeid.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/aniplus.png" alt="Aniplus" />
+        <div class="app-info">
+          <h2>Aniplus</h2>
+          <p>Simulcast y eventos anime.</p>
+          <a href="aniplus.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/anime planet.jfif" alt="Anime Planet" />
+        <div class="app-info">
+          <h2>Anime Planet</h2>
+          <p>Ver anime y crear listas.</p>
+          <a href="animeplanet.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/9 anime.jpg" alt="9Anime" />
+        <div class="app-info">
+          <h2>9Anime</h2>
+          <p>Anime HD sin registro.</p>
+          <a href="9anime.html" class="btn">Ver más</a>
+        </div>
+      </section>
+      <section class="app-card">
+        <img src="imagenes/gogoanime.jpg" alt="Gogoanime" />
+        <div class="app-info">
+          <h2>Gogoanime</h2>
+          <p>Rápido, gratuito y global.</p>
+          <a href="gogoanime.html" class="btn">Ver más</a>
+        </div>
+      </section>
+    </main>
+      <!-- Resto de las tarjetas... -->
+    </main>
+
+    <section class="info-section" id="nosotros">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos una comunidad dedicada a compartir apps de anime con el mundo.</p>
+    </section>
+
+    <section class="info-section" id="contacto">
+      <h2>Contáctenos</h2>
+      <p>¿Tienes una app para recomendar? Escríbenos a: contacto@animeapps.com</p>
+    </section>
+
+    <footer>
+      <p>© 2025 AnimeApps. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <!-- Pestaña flotante para top10 -->
+  <div id="anime-float-preview"></div>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+
+    // Carrusel
+    const track = document.getElementById("carousel-track");
+    const slides = track.querySelectorAll("img");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const offset = -currentIndex * 100;
+      track.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    // Fondo animado
+    tsParticles.load("particles-background", {
+      fullScreen: { enable: true, zIndex: -1 },
+      background: { color: "#0d0d0d" },
+      particles: {
+        number: { value: 80 },
+        color: { value: "#f05454" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: { min: 1, max: 3 } },
+        move: { enable: true, speed: 1 },
+        links: { enable: true, distance: 120, color: "#f05454", opacity: 0.3, width: 1 }
+      },
+      interactivity: {
+        events: { onHover: { enable: true, mode: "grab" } },
+        modes: { grab: { distance: 140 } }
+      }
+    });
+
+    // Vista previa flotante
+    const preview = document.getElementById('anime-float-preview');
+
+    document.querySelectorAll('.anime-float-wrapper').forEach(wrapper => {
+      wrapper.addEventListener('mouseenter', () => {
+        const title = wrapper.dataset.title;
+        const desc = wrapper.dataset.desc;
+        const img = wrapper.dataset.img;
+        preview.innerHTML = `
+          <img src="${img}" alt="${title}" />
+          <p><strong>${title}</strong>: ${desc}</p>
+        `;
+        preview.style.display = 'block';
+        preview.style.pointerEvents = 'auto';
+      });
+
+      wrapper.addEventListener('mousemove', (e) => {
+        preview.style.top = `${e.clientY + 20}px`;
+        preview.style.left = `${e.clientX + 20}px`;
+      });
+
+      wrapper.addEventListener('mouseleave', () => {
+        preview.style.display = 'none';
+        preview.style.pointerEvents = 'none';
+      });
+    });
+  </script>
+  <a href="login.html" class="btn-login-fixed">Iniciar Sesión</a>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Estadísticas - AnimeApps</title>
+  <link rel="stylesheet" href="css/estadisticas.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">AnimeApps</div>
+      <button class="hamburger" id="menu-toggle">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="inicio.html">Inicio</a></li>
+        <li><a href="estadisticas.html">Estadísticas</a></li>
+        <li><a href="nosotros.html">Sobre nosotros</a></li>
+        <li><a href="contacto.html">Contáctenos</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Estadísticas de Uso</h1>
+      <p>Visualiza y vota por tus apps de anime favoritas</p>
+    </div>
+  </header>
+
+  <main class="stats-container">
+    <section class="charts">
+      <div class="chart-box">
+        <h2>Descargas por App</h2>
+        <canvas id="descargasChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h2>Preferencias de los Usuarios</h2>
+        <canvas id="preferenciasChart"></canvas>
+      </div>
+    </section>
+
+    <section class="votacion">
+      <h2>¿Cuál es tu app favorita?</h2>
+      <form id="votoForm">
+        <select id="appSeleccionada" required>
+          <option value="" disabled selected>Elige una app</option>
+          <option value="Crunchyroll">Crunchyroll</option>
+          <option value="AnimeFLV">AnimeFLV</option>
+          <option value="Funimation">Funimation</option>
+          <option value="HIDIVE">HIDIVE</option>
+          <option value="AnimeID">AnimeID</option>
+          <option value="Aniplus">Aniplus</option>
+          <option value="Anime Planet">Anime Planet</option>
+          <option value="9Anime">9Anime</option>
+          <option value="Gogoanime">Gogoanime</option>
+        </select>
+        <button type="submit">Votar</button>
+      </form>
+      <p id="mensajeVoto"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 AnimeApps. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", () => {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+
+    const apps = [
+      "Crunchyroll", "AnimeFLV", "Funimation", "HIDIVE",
+      "AnimeID", "Aniplus", "Anime Planet", "9Anime", "Gogoanime"
+    ];
+
+    const descargas = [120, 95, 80, 60, 45, 38, 50, 90, 110]; // en miles
+    let votos = {
+      "Crunchyroll": 3,
+      "AnimeFLV": 2,
+      "Funimation": 1,
+      "HIDIVE": 1,
+      "AnimeID": 0,
+      "Aniplus": 0,
+      "Anime Planet": 1,
+      "9Anime": 1,
+      "Gogoanime": 2
+    };
+
+    const descargasChart = new Chart(document.getElementById("descargasChart"), {
+      type: "bar",
+      data: {
+        labels: apps,
+        datasets: [{
+          label: "Descargas (miles)",
+          data: descargas,
+          backgroundColor: "#f05454"
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    const preferenciasChart = new Chart(document.getElementById("preferenciasChart"), {
+      type: "pie",
+      data: {
+        labels: apps,
+        datasets: [{
+          label: "Votos",
+          data: apps.map(app => votos[app]),
+          backgroundColor: [
+            "#f05454", "#ff7675", "#fab1a0", "#ffeaa7",
+            "#55efc4", "#81ecec", "#74b9ff", "#a29bfe", "#dfe6e9"
+          ]
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+
+    document.getElementById("votoForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const app = document.getElementById("appSeleccionada").value;
+      if (app) {
+        votos[app]++;
+        preferenciasChart.data.datasets[0].data = apps.map(app => votos[app]);
+        preferenciasChart.update();
+        document.getElementById("mensajeVoto").textContent = `¡Gracias por votar por ${app}!`;
+        this.reset();
+      }
+    });
+  </script>
+</body>
+</html>
