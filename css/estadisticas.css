@@ -133,10 +133,11 @@ footer {
 
   .nav-links {
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
     background: #222;
     margin-top: 1rem;
+    justify-content: center;
   }
 
   .nav-links.show {
@@ -146,6 +147,10 @@ footer {
   .nav-links li {
     text-align: center;
     padding: 0.5rem 0;
+  }
+
+  .nav-links a{
+    color: #f05454;
   }
 
   .charts {

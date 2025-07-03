@@ -59,10 +59,10 @@ header {
 
 @media (max-width: 768px) {
   .nav-links {
-    flex-direction: column;
+    flex-direction: row;
     display: none;
     width: 100%;
-    background: #111;
+    justify-content: center;
     margin-top: 1rem;
   }
 

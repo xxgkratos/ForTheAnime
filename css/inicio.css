@@ -189,9 +189,14 @@ footer {
     display: block;
   }
 
+  .navbar{
+    width: 100%;
+  }
+
   .nav-links {
     display: none;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
     width: 100%;
     background: #222;
     margin-top: 1rem;
@@ -204,6 +209,10 @@ footer {
   .nav-links li {
     text-align: center;
     padding: 0.5rem 0;
+  }
+
+  .navbar a{
+    color: #f05454;
   }
 }
 

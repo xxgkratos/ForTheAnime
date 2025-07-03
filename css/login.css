@@ -14,6 +14,27 @@ body {
   overflow: hidden;
 }
 
+.arriba{
+  position: fixed;
+  z-index: 9;
+  justify-content: flex-start;
+  left: 6%;
+  top: 10%;
+}
+
+.toggle-btn{
+  border: none;
+  border-radius: 25px;
+  height: 30px;
+  width: 80px;
+}
+
+.arriba button[type="button"]{
+  background: linear-gradient(45deg, #ff357a, #fff172);;
+  transition: background 0.7s ease;
+}
+
+
 .ring {
   position: relative;
   width: 500px;

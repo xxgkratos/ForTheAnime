@@ -52,6 +52,14 @@ header {
   list-style: none;
 }
 
+.nav-links a{
+  color: white;
+}
+
+.nav-links a:hover{
+  color: #f05454;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
@@ -59,9 +67,9 @@ header {
 
   .nav-links {
     display: none;
-    flex-direction: column;
+    flex-direction: row ;
+    justify-content: center;
     width: 100%;
-    background: #222;
     margin-top: 1rem;
   }
 
