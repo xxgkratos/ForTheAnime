@@ -88,6 +88,9 @@ header {
   height: 100%;
   object-fit: cover;
   flex: 0 0 100%;
+  
+  /* Animación al aparecer */
+  animation: fadeSlide 0.8s ease;
 }
 
 .carousel-btn {
@@ -111,6 +114,19 @@ header {
 
 .carousel-btn.prev { left: 10px; }
 .carousel-btn.next { right: 10px; }
+
+/* Animación personalizada */
+@keyframes fadeSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 
 /* Apps */
 .apps-container {
@@ -249,43 +265,10 @@ footer {
   }
 }
 
-/* Fondo animado */
-#particles-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
 
 #contenido {
   position: relative;
   z-index: 1;
-}
-
-/* Estilo para gotas/copo de nieve */
-.falling-element {
-  position: fixed;
-  top: 0;
-  width: 6px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  animation: fall linear forwards;
-  z-index: 0;
-}
-
-@keyframes fall {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) scale(0.5);
-    opacity: 0;
-  }
 }
 
 .btn {
@@ -468,6 +451,62 @@ footer {
   transition: transform 0.3s, background 0.3s;
 }
 
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo oscuro */
+body {
+  background-color: #070707;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Botón futurista */
+.glow-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #1e1e2f;
+  color: #fff;
+  border: 2px solid #ff2770;
+  padding: 15px 40px;
+  border-radius: 20px;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow:
+    0 0 10px #ff2770,
+    0 0 20px #ff2770,
+    inset 0 0 10px #ff2770;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+/* Iconos del botón */
+.glow-btn i {
+  color: #ff2770;
+  text-shadow: 0 0 5px #ff2770, 0 0 15px #ff2770;
+}
+
+/* Hover del botón */
+.glow-btn:hover {
+  background-color: #2a2a3d;
+  box-shadow:
+    0 0 20px #ff2770,
+    0 0 40px #ff2770,
+    inset 0 0 20px #ff2770;
+  transform: scale(1.05);
+}
+
 .btn-login-fixed:hover {
   background: linear-gradient(135deg, #ff6b6b, #ffa4a4);
   transform: scale(1.1) rotate(2deg);
@@ -492,3 +531,85 @@ footer {
     transform: translateY(-5px);
   }
 }
+
+/* Animación de aparición */
+@keyframes aparecer {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Animación infinita de flotación */
+@keyframes flotar-infinito {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+
+/* Animación infinita de escalar */
+@keyframes escalar-infinito {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Clases rápidas */
+.aparecer { animation: aparecer 1.5s ease forwards; }
+.desvanecer { animation: desvanecer 1.5s ease forwards; }
+.flotar { animation: flotar-infinito 4s ease-in-out infinite; }
+.rotar { animation: rotar-infinito 10s linear infinite; }
+.parpadear { animation: parpadear 2s ease-in-out infinite; }
+.escalar { animation: escalar-infinito 3s ease-in-out infinite; }
+
+/* Animación fade desde arriba */
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Aplica la animación al cargar el header */
+header {
+  animation: fadeDown 1s ease forwards;
+}
+
+/* Opcionalmente puedes animar el hero de forma independiente */
+.hero h1, .hero p {
+  opacity: 0;
+  animation: fadeDown 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* También el logo */
+.logo {
+  opacity: 0;
+  animation: fadeDown 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Y el menú */
+.nav-links a {
+  opacity: 0;
+  animation: fadeDown 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+/* Si deseas más dinamismo, usa diferentes delays */
+/* Estado inicial */
+header.animate-out {
+  opacity: 0;
+  transform: translateY(-30px) scale(0.95);
+}
+
+/* Estado visible con animación */
+header.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 0.8s ease;
+}
+

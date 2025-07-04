@@ -1,69 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>AnimeApps | Acceso</title>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register - Efecto Gotas</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <div class="arriba">
-    <a href="inicio.html"><button type="button" class="toggle-btn">Regresar</button></a>
-  </div>
-  <div class="ring">
-    <i style="--clr:#00ff0a;"></i>
-    <i style="--clr:#ff0057;"></i>
-    <i style="--clr:#fffd44;"></i>
+    <canvas id="background"></canvas>
 
-    <!-- FORMULARIO INICIAR SESIÓN -->
-    <div class="form-container" id="loginForm">
-      <h2>Iniciar Sesión</h2>
-      <div class="inputBx">
-        <input type="text" placeholder="Usuario">
-      </div>
-      <div class="inputBx">
-        <input type="password" placeholder="Contraseña">
-      </div>
-      <div class="inputBx">
-        <a href="inicio.html"><input type="submit" value="Entrar"></a>
-      </div>
-      <div class="links">
-        <button onclick="mostrarRegistro()">Registrarse</button>
-      </div>
+    <div class="login-container">
+        <h2><i class="fa-solid fa-right-to-bracket"></i> <span id="form-title">LOGIN</span> <i class="fa-solid fa-heart"></i></h2>
+
+        <input type="text" placeholder="Username" id="username" class="form-input">
+        <input type="password" placeholder="Password" id="password" class="form-input">
+        <input type="email" placeholder="Email" id="email" class="form-input hidden">
+
+        <input type="submit" id="submit-btn" value="Sign in">
+
+        <div class="links">
+            <a href="#" id="toggle-link">Switch to Register</a>
+        </div>
+
+        <button id="back-btn">Regresar</button>
     </div>
 
-    <!-- FORMULARIO REGISTRO -->
-    <div class="form-container hidden" id="signupForm">
-      <h2>Registrarse</h2>
-      <div class="inputBx">
-        <input type="text" placeholder="Usuario">
-      </div>
-      <div class="inputBx">
-        <input type="email" placeholder="Correo electrónico">
-      </div>
-      <div class="inputBx">
-        <input type="password" placeholder="Contraseña">
-      </div>
-      <div class="inputBx">
-        <a href="inicio.html"><input type="submit" value="Registrarme"></a>
-      </div>
-      <div class="links">
-        <button onclick="mostrarLogin()">Entrar</button>
-      </div>
-    </div>
-  </div>
-
-  <script >
-        function mostrarRegistro() {
-        document.getElementById('loginForm').classList.add('hidden');
-        document.getElementById('signupForm').classList.remove('hidden');
-        }
-
-        function mostrarLogin() {
-        document.getElementById('signupForm').classList.add('hidden');
-        document.getElementById('loginForm').classList.remove('hidden');
-        }
-
-        </script>
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>

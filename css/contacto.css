@@ -256,3 +256,71 @@ footer {
     gap: 1.2rem;
   }
 }
+
+/* Animación de aparición */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header, .contact-container, footer {
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Retrasos para que aparezcan en cascada */
+.contact-container > section:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.contact-container > section:nth-child(2) {
+  animation-delay: 1s;
+}
+footer {
+  animation-delay: 1.5s;
+}
+
+/* Twitter: temblor */
+.glitch i {
+  animation: shake 1.5s infinite;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  50% { transform: translateX(2px); }
+  75% { transform: translateX(-1px); }
+}
+
+/* Facebook: rebote */
+.bounce i {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Instagram: giro */
+.spin i {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+/* Inputs con animación al enfocarse */
+input:focus, textarea:focus {
+  animation: pulse 1s infinite alternate;
+  outline: none;
+}
+

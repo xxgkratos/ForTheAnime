@@ -8,40 +8,37 @@
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js"></script>
 </head>
 <body>
-  <!-- Fondo animado -->
-  <div id="particles-background"></div>
+    <div id="contenido">
+      <!-- Menú -->
+      <header>
+        <nav class="navbar">
+          <div class="logo">AnimeApps</div>
+          <button class="hamburger" id="menu-toggle">&#9776;</button>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="estadisticas.html">Estadísticas</a></li>
+            <li><a href="nosotros.html">Sobre nosotros</a></li>
+            <li><a href="contacto.html">Contáctenos</a></li>
+          </ul>
+        </nav>
+        <div class="hero" id="inicio">
+          <h1>Explora las mejores apps de Anime</h1>
+          <p>Conoce, compara y elige tu favorita</p>
+        </div>
+      </header>
 
-  <div id="contenido">
-    <!-- Menú -->
-    <header>
-      <nav class="navbar">
-        <div class="logo">AnimeApps</div>
-        <button class="hamburger" id="menu-toggle">&#9776;</button>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="inicio.html">Inicio</a></li>
-          <li><a href="estadisticas.html">Estadísticas</a></li>
-          <li><a href="nosotros.html">Sobre nosotros</a></li>
-          <li><a href="contacto.html">Contáctenos</a></li>
-        </ul>
-      </nav>
-      <div class="hero" id="inicio">
-        <h1>Explora las mejores apps de Anime</h1>
-        <p>Conoce, compara y elige tu favorita</p>
-      </div>
-    </header>
-
-    <!-- Carrusel -->
-    <section class="carousel" id="carousel">
-      <button class="carousel-btn prev" id="prev">&#10094;</button>
-      <div class="carousel-track" id="carousel-track">
-        <img src="imagenes/carrucel2.jpg" alt="Anime 1" />
-        <img src="imagenes/carrucel1.jpg" alt="Anime 2" />
-        <img src="imagenes/carrucel3.jpg" alt="Anime 3" />
-        <img src="imagenes/carrucel4.jpg" alt="Anime 4" />
-        <img src="imagenes/carrucel5.png" alt="Anime 5" />
-      </div>
-      <button class="carousel-btn next" id="next">&#10095;</button>
-    </section>
+      <!-- Carrusel -->
+      <section class="carousel" id="carousel">
+        <button class="carousel-btn prev" id="prev">&#10094;</button>
+        <div class="carousel-track" id="carousel-track">
+          <img src="imagenes/carrucel2.jpg" alt="Anime 1" />
+          <img src="imagenes/carrucel1.jpg" alt="Anime 2" />
+          <img src="imagenes/carrucel3.jpg" alt="Anime 3" />
+          <img src="imagenes/carrucel4.jpg" alt="Anime 4" />
+          <img src="imagenes/carrucel5.png" alt="Anime 5" />
+        </div>
+        <button class="carousel-btn next" id="next">&#10095;</button>
+      </section>
 
     <!-- Top 10 Animes -->
     <section class="top10-animes-flotantes">
@@ -80,8 +77,9 @@
       </div>
     </section>
 
+
     <!-- Apps -->
-    <!-- Apps -->
+    <div class="escalar">
     <main class="apps-container" id="apps">
       <section class="app-card">
         <img src="imagenes/crunchyroll.png" alt="Crunchyroll" />
@@ -156,6 +154,7 @@
         </div>
       </section>
     </main>
+  </div>
       <!-- Resto de las tarjetas... -->
     </main>
 
@@ -250,7 +249,30 @@
         preview.style.pointerEvents = 'none';
       });
     });
+
+    // Detecta cuando el header entra en la pantalla
+const header = document.querySelector('header');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      header.classList.remove('animate-out');
+      header.classList.add('animate-in');
+    } else {
+      header.classList.remove('animate-in');
+      header.classList.add('animate-out');
+    }
+  });
+}, { threshold: 0.2 });
+
+observer.observe(header);
   </script>
-  <a href="login.html" class="btn-login-fixed">Iniciar Sesión</a>
+<a href="login.html" class="glow-btn login-fixed">
+  <i class="fa-solid fa-right-to-bracket"></i>
+  LOGIN
+  <i class="fa-solid fa-heart"></i>
+</a>
+
+
 </body>
 </html>
